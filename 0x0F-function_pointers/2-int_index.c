@@ -1,30 +1,21 @@
+#include <stdio.h>
 #include "function_pointers.h"
-
 /**
-  * int_index - ...
-  * @array: ...
-  * @size: ...
-  * @cmp: ...
-  *
-  * Return: ...
-  */
-int int_index(int *array, int size, int (*cmp)(int))
+ * array_iterator - function that prints name
+ * @array: array
+ * @size: size
+ * @action: action
+ *
+ **/
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i = 0;
+	size_t i;
 
-	if (size > 0)
+	if ((array == NULL) || (size == 0) || (action == NULL))
+		return;
+
+	for (i = 0; i < size; i++)
 	{
-		if (array != NULL && cmp != NULL)
-		{
-			while (i < size)
-			{
-				if (cmp(array[i]))
-					return (i);
-
-				i++;
-			}
-		}
+		action(array[i]);
 	}
-
-	return (-1);
 }
