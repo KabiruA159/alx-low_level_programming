@@ -1,0 +1,1 @@
+Solution for singly_linked_lists tasks
