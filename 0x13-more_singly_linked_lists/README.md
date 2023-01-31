@@ -1,0 +1,1 @@
+Solutions for more_singly_linked_lists projects tasks
